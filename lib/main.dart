@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:globalinctasks/Utils/themedata.dart';
 import 'package:globalinctasks/authscreens/loginscreens/loginscreen.dart';
 import 'package:globalinctasks/authscreens/spalshscreen.dart';
 import 'package:globalinctasks/homescreens/homescreen.dart';
 
+import 'Utils/getroutes.dart';
+import 'Utils/routesscreens.dart';
+
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,19 +27,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Global Tasks',
-      theme: ThemeData(
-        primaryColor: Color(0xffE43228),
-        secondaryHeaderColor: Color(0xffAF0917),
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/splash',
-      routes: {
-        //  "/": (context) => const AppIntro1Screen(),
-        "/splash": (context) => const SplashScreen(),
-        "/login": (context) => LoginScreen(),
-        "/home": (context) => HomeScreen(),
-      },
-      builder: EasyLoading.init(),
+      theme: MyTheme.lightTheme(context),
+      initialRoute: MyRoutes.initialRoute,
+      getPages: GetAppRoute().getRoutes(),
     );
   }
 }

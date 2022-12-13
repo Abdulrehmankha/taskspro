@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 // import 'package:health_care_app/views/errorscreens/connectionlost.dart';
 
 class AppConstants {
-  static const urlBase = 'https://abc.premedgo.com/public/api/';
+  static const urlBase = 'https://jsonplaceholder.typicode.com/';
 
   static showLoaderDialog(BuildContext context) {
     AlertDialog alert = AlertDialog(

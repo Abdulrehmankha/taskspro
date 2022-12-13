@@ -11,7 +11,7 @@ import 'package:path/path.dart';
 
 class BaseService {
   bool internetDialog=false;
-  late String baseURL = "https://jsonplaceholder.typicode.com/";
+  late String baseURL = "https://jsonplaceholder.typicode.com";
   // late String baseURL = "https://22f5-2400-adc1-125-f500-9407-8bcc-4c70-2154.ngrok.io/api";
   String? token;
 

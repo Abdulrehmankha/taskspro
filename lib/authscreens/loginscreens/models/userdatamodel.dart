@@ -1,127 +1,121 @@
-class UserDetailModel {
-  int? id;
-  String? name;
-  String? username;
-  String? email;
-  Address? address;
-  String? phone;
-  String? website;
-  Company? company;
-
-  UserDetailModel({
-    this.id,
-    this.name,
-    this.username,
-    this.email,
-    this.address,
-    this.phone,
-    this.website,
-    this.company,
-  });
-
-  UserDetailModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'] as int?;
-    name = json['name'] as String?;
-    username = json['username'] as String?;
-    email = json['email'] as String?;
-    address = (json['address'] as Map<String,dynamic>?) != null ? Address.fromJson(json['address'] as Map<String,dynamic>) : null;
-    phone = json['phone'] as String?;
-    website = json['website'] as String?;
-    company = (json['company'] as Map<String,dynamic>?) != null ? Company.fromJson(json['company'] as Map<String,dynamic>) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
-    json['id'] = id;
-    json['name'] = name;
-    json['username'] = username;
-    json['email'] = email;
-    json['address'] = address?.toJson();
-    json['phone'] = phone;
-    json['website'] = website;
-    json['company'] = company?.toJson();
-    return json;
-  }
-}
-
-class Address {
-  String? street;
-  String? suite;
-  String? city;
-  String? zipcode;
-  Geo? geo;
-
-  Address({
-    this.street,
-    this.suite,
-    this.city,
-    this.zipcode,
-    this.geo,
-  });
-
-  Address.fromJson(Map<String, dynamic> json) {
-    street = json['street'] as String?;
-    suite = json['suite'] as String?;
-    city = json['city'] as String?;
-    zipcode = json['zipcode'] as String?;
-    geo = (json['geo'] as Map<String,dynamic>?) != null ? Geo.fromJson(json['geo'] as Map<String,dynamic>) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
-    json['street'] = street;
-    json['suite'] = suite;
-    json['city'] = city;
-    json['zipcode'] = zipcode;
-    json['geo'] = geo?.toJson();
-    return json;
-  }
-}
-
-class Geo {
-  String? lat;
-  String? lng;
-
-  Geo({
-    this.lat,
-    this.lng,
-  });
-
-  Geo.fromJson(Map<String, dynamic> json) {
-    lat = json['lat'] as String?;
-    lng = json['lng'] as String?;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
-    json['lat'] = lat;
-    json['lng'] = lng;
-    return json;
-  }
-}
-
-class Company {
-  String? name;
-  String? catchPhrase;
-  String? bs;
-
-  Company({
-    this.name,
-    this.catchPhrase,
-    this.bs,
-  });
-
-  Company.fromJson(Map<String, dynamic> json) {
-    name = json['name'] as String?;
-    catchPhrase = json['catchPhrase'] as String?;
-    bs = json['bs'] as String?;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
-    json['name'] = name;
-    json['catchPhrase'] = catchPhrase;
-    json['bs'] = bs;
-    return json;
-  }
-}
+// class LoginModel {
+//   int? id;
+//   String? name;
+//   String? username;
+//   String? email;
+//   Address? address;
+//   String? phone;
+//   String? website;
+//   Company? company;
+//
+//   LoginModel(
+//       {this.id,
+//         this.name,
+//         this.username,
+//         this.email,
+//         this.address,
+//         this.phone,
+//         this.website,
+//         this.company});
+//
+//   LoginModel.fromJson(Map<String, dynamic> json) {
+//     id = json['id'];
+//     name = json['name'];
+//     username = json['username'];
+//     email = json['email'];
+//     address =
+//     json['address'] != null ? new Address.fromJson(json['address']) : null;
+//     phone = json['phone'];
+//     website = json['website'];
+//     company =
+//     json['company'] != null ? new Company.fromJson(json['company']) : null;
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['id'] = this.id;
+//     data['name'] = this.name;
+//     data['username'] = this.username;
+//     data['email'] = this.email;
+//     if (this.address != null) {
+//       data['address'] = this.address!.toJson();
+//     }
+//     data['phone'] = this.phone;
+//     data['website'] = this.website;
+//     if (this.company != null) {
+//       data['company'] = this.company!.toJson();
+//     }
+//     return data;
+//   }
+// }
+//
+// class Address {
+//   String? street;
+//   String? suite;
+//   String? city;
+//   String? zipcode;
+//   Geo? geo;
+//
+//   Address({this.street, this.suite, this.city, this.zipcode, this.geo});
+//
+//   Address.fromJson(Map<String, dynamic> json) {
+//     street = json['street'];
+//     suite = json['suite'];
+//     city = json['city'];
+//     zipcode = json['zipcode'];
+//     geo = json['geo'] != null ? new Geo.fromJson(json['geo']) : null;
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['street'] = this.street;
+//     data['suite'] = this.suite;
+//     data['city'] = this.city;
+//     data['zipcode'] = this.zipcode;
+//     if (this.geo != null) {
+//       data['geo'] = this.geo!.toJson();
+//     }
+//     return data;
+//   }
+// }
+//
+// class Geo {
+//   String? lat;
+//   String? lng;
+//
+//   Geo({this.lat, this.lng});
+//
+//   Geo.fromJson(Map<String, dynamic> json) {
+//     lat = json['lat'];
+//     lng = json['lng'];
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['lat'] = this.lat;
+//     data['lng'] = this.lng;
+//     return data;
+//   }
+// }
+//
+// class Company {
+//   String? name;
+//   String? catchPhrase;
+//   String? bs;
+//
+//   Company({this.name, this.catchPhrase, this.bs});
+//
+//   Company.fromJson(Map<String, dynamic> json) {
+//     name = json['name'];
+//     catchPhrase = json['catchPhrase'];
+//     bs = json['bs'];
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['name'] = this.name;
+//     data['catchPhrase'] = this.catchPhrase;
+//     data['bs'] = this.bs;
+//     return data;
+//   }
+// }

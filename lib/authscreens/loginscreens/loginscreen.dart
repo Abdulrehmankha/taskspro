@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:globalinctasks/Utils/color_config.dart';
 import 'package:globalinctasks/Utils/responsive.dart';
+import 'package:globalinctasks/Utils/routesscreens.dart';
 import 'package:globalinctasks/authscreens/loginscreens/logincontrollers/loginauthcontroller.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,8 +10,8 @@ class LoginScreen extends StatelessWidget {
 
   final GlobalKey<FormState> _formKey = GlobalKey();
   Responsive response =  Responsive();
-
   LoginAuthController loginAuthController = Get.put(LoginAuthController());
+
   @override
   Widget build(BuildContext context) {
     response.setContext(context);
@@ -210,8 +211,8 @@ class LoginScreen extends StatelessWidget {
                               validator: (String? value) {
                                 if (value!.isEmpty) {
                                   return 'Please Enter Your Password';
-                                } else if (value.length <= 2) {
-                                  return 'Your Password Contains atleast 4 letters';
+                                } else if (value.length <= 4) {
+                                  return 'Your Password Contains atleast 5 letters';
                                 }
                                 return null;
                               },
@@ -242,10 +243,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               onPressed: (){
                                 if (_formKey.currentState!.validate()) {
-                                  print("Success");
-                                  Navigator.pushNamed(context, '/home');
-                                  loginAuthController.getUserData(context);
-                                  //loginController.logInUserEmail(context,emailController.text , passwordController.text);
+                                  Get.toNamed(MyRoutes.homeRoute);
                                 }
 
 
@@ -253,8 +251,7 @@ class LoginScreen extends StatelessWidget {
                               child: Text(
                                 "LOGIN",
                                 style: TextStyle(
-                                  color: const Color(
-                                      0xffffffff),
+                                  color: ColorConfig.textColor,
                                   fontSize: response
                                       .setTextScale(16),
                                   fontWeight: FontWeight.bold,
