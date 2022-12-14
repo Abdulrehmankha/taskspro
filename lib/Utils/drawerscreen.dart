@@ -3,17 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:globalinctasks/Utils/color_config.dart';
 import 'package:globalinctasks/Utils/responsive.dart';
-// import 'package:health_care_app/Utils/color_config.dart';
-// // import 'dart:io';
-// import 'package:health_care_app/Utils/responsive.dart';
-// import 'package:health_care_app/controllers/userdata_controller.dart';
-// import 'package:health_care_app/views/health_questionnaire/view/health_questionnaire.dart';
-// import 'package:health_care_app/views/payments/add_master_card.dart';
-// import 'package:health_care_app/views/payments/payment_method_visa.dart';
-// import 'package:health_care_app/views/settingscreens/help_screen.dart';
-// import 'package:health_care_app/views/settingscreens/privacy_screen.dart';
-// import 'package:health_care_app/views/staticscreens/customersupport.dart';
-// import 'package:health_care_app/views/upcominguppoinment/appointmenthistory.dart';
+
 //
 class DrawerScreen extends StatelessWidget {
   Responsive response = Responsive();

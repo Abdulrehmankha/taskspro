@@ -4,6 +4,6 @@ class MyRoutes {
   static String splashscreenRoute = '/splash';
   static String homeRoute = '/home';
   static String loginRoute = '/login';
-  static String reportsScreenRoute = '/allreports';
+  static String transactionScreenRoute = '/alltransactions';
 
 }

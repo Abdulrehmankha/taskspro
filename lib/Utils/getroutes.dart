@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:globalinctasks/Utils/routesscreens.dart';
 import 'package:globalinctasks/authscreens/loginscreens/loginscreen.dart';
 import 'package:globalinctasks/homescreens/homescreen.dart';
+import 'package:globalinctasks/homescreens/transactionscreens/views/transactionsscreen.dart';
 
 import '../authscreens/spalshscreen.dart';
 
@@ -11,7 +12,7 @@ class GetAppRoute{
     return [
       GetPage(
           name: MyRoutes.initialRoute,
-          page: () => SplashScreen(),
+          page: () => HomeScreen(),
           // page: () => HomeScreenPage(),
       ),
       GetPage(
@@ -21,6 +22,11 @@ class GetAppRoute{
       GetPage(
         name: MyRoutes.homeRoute,
         page: () => HomeScreen(),
+      ),
+
+      GetPage(
+        name: MyRoutes.transactionScreenRoute,
+        page: () => TransactionsScreen(),
       ),
 
 

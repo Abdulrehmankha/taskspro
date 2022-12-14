@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:health_care_app/views/errorscreens/connectionlost.dart';
+import 'package:globalinctasks/Utils/color_config.dart';
 
 class AppConstants {
-  static const urlBase = 'https://jsonplaceholder.typicode.com/';
+  static const urlBase = 'https://60e29b749103bd0017b4743f.mockapi.io/api/v1/';
 
   static showLoaderDialog(BuildContext context) {
     AlertDialog alert = AlertDialog(
@@ -11,14 +11,14 @@ class AppConstants {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircularProgressIndicator(
-            color: Theme.of(context).primaryColor,
+            color: ColorConfig.secondaryColor,
           ),
           Container(
               margin: const EdgeInsets.all(14.0),
               child: Text(
                 "Please wait...",
                 style: TextStyle(
-                  color: Theme.of(context).primaryColor,
+                  color: ColorConfig.secondaryColor,
                 ),
               )),
         ],
@@ -60,13 +60,13 @@ class AppConstants {
       ),
       messageText: Text(
         msg,
-        style: TextStyle(color: Theme.of(context).primaryColor),
+        style: TextStyle(color: ColorConfig.darkGreyColor),
       ),
       icon: Icon(
         Icons.error,
-        color: Theme.of(context).primaryColor,
+        color: ColorConfig.secondaryColor,
       ),
-      colorText: Theme.of(context).primaryColor,
+      colorText: ColorConfig.primaryColor,
       backgroundColor: Colors.white,
       snackPosition: SnackPosition.TOP,
       margin: const EdgeInsets.all(15),
@@ -86,13 +86,13 @@ class AppConstants {
       ),
       messageText: Text(
         msg,
-        style: TextStyle(color: Theme.of(context).primaryColor),
+        style: TextStyle(color: ColorConfig.primaryColor),
       ),
       icon: Icon(
         Icons.thumb_up_outlined,
-        color: Theme.of(context).primaryColor,
+        color: ColorConfig.primaryColor,
       ),
-      colorText: Theme.of(context).primaryColor,
+      colorText: ColorConfig.primaryColor,
       backgroundColor: Colors.white,
       snackPosition: SnackPosition.TOP,
       margin: const EdgeInsets.all(15),
@@ -110,7 +110,7 @@ class AppConstants {
           mainAxisSize: MainAxisSize.min,
           children: [
             CircularProgressIndicator(
-              color: Color(0xff4162EF),
+              color: ColorConfig.secondaryColor,
             ),
             SizedBox(
               height: 8,
