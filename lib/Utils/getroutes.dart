@@ -13,7 +13,7 @@ class GetAppRoute{
     return [
       GetPage(
           name: MyRoutes.initialRoute,
-          page: () => HomeScreen(),
+          page: () => SplashScreen(),
           // page: () => HomeScreenPage(),
       ),
       GetPage(

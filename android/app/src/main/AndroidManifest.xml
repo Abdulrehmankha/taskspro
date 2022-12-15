@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.globalinctasks">
    <application
-        android:label="globalinctasks"
+        android:label="sentraxtasks"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,21 +1,19 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:globalinctasks/constants/app_constants.dart';
 import 'package:globalinctasks/homescreens/transactionscreens/transmodel/transdatamodel.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class AlltransactionController extends GetxController{
 
-
-  // TransModel? transactionsModel;
   RxBool isloading = false.obs;
-  RxString selectedIndexname = ''.obs;
-
+  late DateTime dt;
+  var formattedDate;
   List<TransModel> myAllData = [];
+
   @override
   Future<void> onInit()async{
     super.onInit();
@@ -36,11 +34,26 @@ class AlltransactionController extends GetxController{
         myAllData.clear();
 
         for(var data in jsonBody){
-          myAllData.add(TransModel(data['date'], data['amount'], data['type'], data['currencyCode'], data['iban'], data['description'], data['bic'], data['id']));
+          myAllData.add
+            (
+              TransModel(
+                  data['date'],
+                  data['amount'],
+                  data['type'],
+                  data['currencyCode'],
+                  data['iban'],
+                  data['description'],
+                  data['bic'],
+                  data['id']
+              ));
         }
-        print('${myAllData[0].type}');
+        for(int i = 0; i < myAllData.length; i++){
+          dt = DateTime.parse('${myAllData[i].date}');
+          formattedDate = DateFormat('dd-MM-yyyy').format(dt);
+          myAllData[i].date = formattedDate;
+        }
+        myAllData.sort((a, b) => b.date.compareTo(a.date));
         isloading.value = false;
-
       }
     } catch (error) {
       if (error is TimeoutException) {
@@ -53,6 +66,4 @@ class AlltransactionController extends GetxController{
       }
     }
   }
-
-
 }

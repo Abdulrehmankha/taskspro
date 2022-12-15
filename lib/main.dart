@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:globalinctasks/Utils/themedata.dart';
-import 'package:globalinctasks/authscreens/loginscreens/loginscreen.dart';
-import 'package:globalinctasks/authscreens/spalshscreen.dart';
-import 'package:globalinctasks/homescreens/homescreen.dart';
-
 import 'Utils/getroutes.dart';
 import 'Utils/routesscreens.dart';
 

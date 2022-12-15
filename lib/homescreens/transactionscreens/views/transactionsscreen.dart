@@ -4,6 +4,8 @@ import 'package:globalinctasks/Utils/responsive.dart';
 import 'package:globalinctasks/Utils/routesscreens.dart';
 import 'package:globalinctasks/homescreens/transactionscreens/transcontroller/transdataController.dart';
 import '../../../Utils/color_config.dart';
+import 'package:intl/intl.dart';
+
 
 class TransactionsScreen extends StatefulWidget {
   // const TransactionsScreen({Key? key}) : super(key: key);
@@ -72,7 +74,6 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                   shrinkWrap: true,
                   itemCount: alltransactionController.myAllData.length,
                   itemBuilder: (BuildContext context, int index) {
-                    //var changestatus =  cm_attended_controller.compatttktdata.value.items![index].tktstsid;
                     return SafeArea(
                       child: Container(
                         width: double.infinity,

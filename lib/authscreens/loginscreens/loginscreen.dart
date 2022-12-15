@@ -6,7 +6,6 @@ import 'package:globalinctasks/Utils/routesscreens.dart';
 import 'package:globalinctasks/authscreens/loginscreens/logincontrollers/loginauthcontroller.dart';
 
 class LoginScreen extends StatelessWidget {
-  // const LoginScreen({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> _formKey = GlobalKey();
   Responsive response =  Responsive();
@@ -52,80 +51,77 @@ class LoginScreen extends StatelessWidget {
                       //Email Text Field
                       Padding(
                           padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                          child: Container(
-                            // height: response.setHeight(6.5),
-                            child: TextFormField(
-                              // focusNode: focusNode,
-                              style: TextStyle(
-                                fontSize: response.setTextScale(14),
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black,
-                              ),
-                              decoration: InputDecoration(
-                                  errorStyle: TextStyle(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: response.setTextScale(12),
-                                    color: Colors.red,
-                                  ),
-                                  errorBorder: const OutlineInputBorder(
-                                    gapPadding: 6.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.redAccent,
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  focusedErrorBorder: const OutlineInputBorder(
-                                    gapPadding: 6.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.redAccent,
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                  ),
-
-                                  enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xffdadada),
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: ColorConfig.secondaryColor,
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                  ),
-
-                                  hintText: "Email",
-                                  hintStyle: TextStyle(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: response.setTextScale(14),
-                                    color: ColorConfig.hintColor,
-                                  ),
-                                  filled: true,
-                                  fillColor: const Color(0xffefefef)),
-                              controller: loginAuthController.emailcontroller,
-                              keyboardType: TextInputType.emailAddress,
-                              validator: (String? value) {
-                                String pattern =
-                                    r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-                                    r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-                                    r"{0,253}[a-zA-Z0-9])?)*$";
-                                RegExp regex = RegExp(pattern);
-                                if (value == null || value.isEmpty || !regex.hasMatch(value)) {
-                                  return 'Enter a valid email address';
-                                }
-                                return null;
-                              },
-                              // onSaved: (value) {
-                              //   setState(() {});
-                              // },
+                          child: TextFormField(
+                            // focusNode: focusNode,
+                            style: TextStyle(
+                              fontSize: response.setTextScale(14),
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black,
                             ),
+                            decoration: InputDecoration(
+                                errorStyle: TextStyle(
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: response.setTextScale(12),
+                                  color: Colors.red,
+                                ),
+                                errorBorder: const OutlineInputBorder(
+                                  gapPadding: 6.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.redAccent,
+                                  ),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                                ),
+                                focusedErrorBorder: const OutlineInputBorder(
+                                  gapPadding: 6.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.redAccent,
+                                  ),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                                ),
+
+                                enabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xffdadada),
+                                  ),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: ColorConfig.secondaryColor,
+                                  ),
+                                  borderRadius:
+                                  const BorderRadius.all(Radius.circular(5)),
+                                ),
+
+                                hintText: "Email",
+                                hintStyle: TextStyle(
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: response.setTextScale(14),
+                                  color: ColorConfig.hintColor,
+                                ),
+                                filled: true,
+                                fillColor: const Color(0xffefefef)),
+                            controller: loginAuthController.emailcontroller,
+                            keyboardType: TextInputType.emailAddress,
+                            validator: (String? value) {
+                              String pattern =
+                                  r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+                                  r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+                                  r"{0,253}[a-zA-Z0-9])?)*$";
+                              RegExp regex = RegExp(pattern);
+                              if (value == null || value.isEmpty || !regex.hasMatch(value)) {
+                                return 'Enter a valid email address';
+                              }
+                              return null;
+                            },
+                            // onSaved: (value) {
+                            //   setState(() {});
+                            // },
                           )
                       ),
                       SizedBox(
@@ -136,89 +132,86 @@ class LoginScreen extends StatelessWidget {
 
                       Padding(
                           padding: const EdgeInsets.only(left: 20, right: 20,),
-                          child: Container(
-                            // height: response.setHeight(6.5),
-                            child: Obx(() => TextFormField(
-                              style: TextStyle(
-                                fontSize: response.setTextScale(14),
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black,
-                              ),
-                              decoration: InputDecoration(
-                                  errorStyle: TextStyle(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: response.setTextScale(12),
-                                    color: Colors.red,
-                                  ),
-                                  errorBorder: const OutlineInputBorder(
-                                    gapPadding: 6.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.redAccent,
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  focusedErrorBorder: const OutlineInputBorder(
-                                    gapPadding: 6.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.redAccent,
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                  ),
-                                  enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xffdadada),
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: ColorConfig.secondaryColor,
-                                    ),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                  ),
-
-                                  suffixIcon: InkWell(
-                                    onTap: () {
-                                      loginAuthController.togglepasswordview();
-                                    },
-                                    child: Icon(
-                                      loginAuthController.hidepassword.value ?
-                                      Icons.remove_red_eye_rounded : Icons.visibility_off,
-                                      size: 18,
-                                      color: Colors.black87,
-                                    ),
-                                  ),
-                                  hintText: "Password",
-
-                                  hintStyle: TextStyle(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: response.setTextScale(14),
-                                    color: ColorConfig.hintColor,
-                                  ),
-                                  filled: true,
-                                  fillColor: const Color(0xffefefef)),
-
-                              controller: loginAuthController.passwordcontroller,
-                              keyboardType: TextInputType.text,
-                              // obscureText: true,
-                              obscureText: loginAuthController.hidepassword.value,
-                              validator: (String? value) {
-                                if (value!.isEmpty) {
-                                  return 'Please Enter Your Password';
-                                } else if (value.length <= 4) {
-                                  return 'Your Password Contains atleast 5 letters';
-                                }
-                                return null;
-                              },
-
-                            )
+                          child: Obx(() => TextFormField(
+                            style: TextStyle(
+                              fontSize: response.setTextScale(14),
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black,
                             ),
+                            decoration: InputDecoration(
+                                errorStyle: TextStyle(
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: response.setTextScale(12),
+                                  color: Colors.red,
+                                ),
+                                errorBorder: const OutlineInputBorder(
+                                  gapPadding: 6.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.redAccent,
+                                  ),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                                ),
+                                focusedErrorBorder: const OutlineInputBorder(
+                                  gapPadding: 6.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.redAccent,
+                                  ),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                                ),
+                                enabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xffdadada),
+                                  ),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: ColorConfig.secondaryColor,
+                                  ),
+                                  borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
+                                ),
+
+                                suffixIcon: InkWell(
+                                  onTap: () {
+                                    loginAuthController.togglepasswordview();
+                                  },
+                                  child: Icon(
+                                    loginAuthController.hidepassword.value ?
+                                    Icons.remove_red_eye_rounded : Icons.visibility_off,
+                                    size: 18,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                hintText: "Password",
+
+                                hintStyle: TextStyle(
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: response.setTextScale(14),
+                                  color: ColorConfig.hintColor,
+                                ),
+                                filled: true,
+                                fillColor: const Color(0xffefefef)),
+
+                            controller: loginAuthController.passwordcontroller,
+                            keyboardType: TextInputType.text,
+                            // obscureText: true,
+                            obscureText: loginAuthController.hidepassword.value,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Please Enter Your Password';
+                              } else if (value.length <= 4) {
+                                return 'Your Password Contains atleast 5 letters';
+                              }
+                              return null;
+                            },
+
+                          )
                           )
                       ),
 
@@ -229,7 +222,7 @@ class LoginScreen extends StatelessWidget {
 
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: Container(
+                        child: SizedBox(
                           height: response.setHeight(6.5),
                           width: response.setWidth(90),
                           child: ElevatedButton(
