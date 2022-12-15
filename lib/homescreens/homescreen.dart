@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
 
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionsScreen()));
+                            Get.toNamed(MyRoutes.transactionScreenRoute);
                           },
                           child: Card(
                             elevation: 0.5,

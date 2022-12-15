@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:globalinctasks/Utils/routesscreens.dart';
 import 'package:globalinctasks/authscreens/loginscreens/loginscreen.dart';
 import 'package:globalinctasks/homescreens/homescreen.dart';
+import 'package:globalinctasks/homescreens/transactionscreens/views/transactiondetails.dart';
 import 'package:globalinctasks/homescreens/transactionscreens/views/transactionsscreen.dart';
 
 import '../authscreens/spalshscreen.dart';
@@ -29,6 +30,10 @@ class GetAppRoute{
         page: () => TransactionsScreen(),
       ),
 
+      GetPage(
+        name: MyRoutes.AlltransactionDetailRoute,
+        page: () => TransactionsDetails(),
+      ),
 
     ];
   }

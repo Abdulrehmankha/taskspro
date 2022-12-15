@@ -1,14 +1,5 @@
-class TransactionsModel {
-  String? date;
-  String? amount;
-  String? type;
-  String? currencyCode;
-  String? iban;
-  String? description;
-  String? bic;
-  String? id;
-
-  TransactionsModel({
+class TransModel {
+  TransModel(
     this.date,
     this.amount,
     this.type,
@@ -17,29 +8,36 @@ class TransactionsModel {
     this.description,
     this.bic,
     this.id,
-  });
+  );
 
-  TransactionsModel.fromJson(Map<String, dynamic> json) {
-    date = json['date'] as String?;
-    amount = json['amount'] as String?;
-    type = json['type'] as String?;
-    currencyCode = json['currencyCode'] as String?;
-    iban = json['iban'] as String?;
-    description = json['description'] as String?;
-    bic = json['bic'] as String?;
-    id = json['id'] as String?;
-  }
+  var date;
+  String? amount;
+  var type;
+  String? currencyCode;
+  String? iban;
+  String? description;
+  String? bic;
+  String? id;
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
-    json['date'] = date;
-    json['amount'] = amount;
-    json['type'] = type;
-    json['currencyCode'] = currencyCode;
-    json['iban'] = iban;
-    json['description'] = description;
-    json['bic'] = bic;
-    json['id'] = id;
-    return json;
-  }
+  // factory TransModel.fromJson(Map<String, dynamic> json) => TransModel(
+  //   date: json["date"],
+  //   amount: json["amount"],
+  //   type: json["type"],
+  //   currencyCode: json["currencyCode"],
+  //   iban: json["iban"],
+  //   description: json["description"],
+  //   bic: json["bic"],
+  //   id: json["id"],
+  // );
+  //
+  // Map<String, dynamic> toJson() => {
+  //   "date": date,
+  //   "amount": amount,
+  //   "type": type,
+  //   "currencyCode": currencyCode,
+  //   "iban": iban,
+  //   "description": description,
+  //   "bic": bic,
+  //   "id": id,
+  // };
 }

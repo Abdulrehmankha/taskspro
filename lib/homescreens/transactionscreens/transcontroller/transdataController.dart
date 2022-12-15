@@ -10,38 +10,46 @@ import 'package:http/http.dart' as http;
 
 class AlltransactionController extends GetxController{
 
- TransactionsModel? transactionsModel;
-  RxBool isloading = true.obs;
-  RxList Alldata = [].obs;
-  getUsersTranactionData(context) async {
-    // AppConstants.showLoaderDialog(context);
-    isloading.value = true;
-    var data;
-    final url = Uri.parse('${AppConstants.urlBase}transactions');
 
+  // TransModel? transactionsModel;
+  RxBool isloading = false.obs;
+  RxString selectedIndexname = ''.obs;
+
+  List<TransModel> myAllData = [];
+  @override
+  Future<void> onInit()async{
+    super.onInit();
+    getUsersTranactionData();
+  }
+
+  getUsersTranactionData() async {
+    final url = Uri.parse('${AppConstants.urlBase}transactions');
     try {
+      isloading.value = true;
       final response = await http
-          .get(url)
-          .timeout(const Duration(seconds: 10));
+          .get(url, headers: {"Accept": "application/json"}).timeout(const Duration(seconds: 10));
       if (response.statusCode == 200 || response.statusCode == 201) {
-        data = jsonDecode(response.body);
-        if(data != null){
-          debugPrint('Data Agaya.......');
-          transactionsModel = TransactionsModel.fromJson(data);
-          isloading.value = false;
+
+        String? responseBody = response.body;
+        var jsonBody = json.decode(responseBody);
+
+        myAllData.clear();
+
+        for(var data in jsonBody){
+          myAllData.add(TransModel(data['date'], data['amount'], data['type'], data['currencyCode'], data['iban'], data['description'], data['bic'], data['id']));
         }
+        print('${myAllData[0].type}');
+        isloading.value = false;
 
       }
     } catch (error) {
       if (error is TimeoutException) {
-        isloading.value = false;
-        AppConstants.hideloading();
-        //AppConstants.showinternetDialog(context);
+        print(error.message);
+        print("error");
       }
       if (error is SocketException) {
-        isloading.value = false;
-        AppConstants.hideloading();
-        //AppConstants.showinternetDialog(context);
+        print(error.message);
+        print("error socket");
       }
     }
   }
