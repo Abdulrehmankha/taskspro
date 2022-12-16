@@ -120,6 +120,31 @@ class TransactionsDetails extends StatelessWidget {
                     height: response.setHeight(1),
                   ),
 
+                  // Transaction Time
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Time: ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: response.setTextScale(16),
+                              color: const Color(0xff000000)),
+                        ),
+                        TextSpan(
+                            text: '${alltransdetails.myAllTransTime[groupdata!]}',
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: response.setTextScale(14),
+                              color: Colors.grey[700],
+                            )),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: response.setHeight(1),
+                  ),
+
                   // Amount
                   RichText(
                     text: TextSpan(

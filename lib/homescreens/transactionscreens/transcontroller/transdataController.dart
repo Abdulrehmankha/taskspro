@@ -12,7 +12,9 @@ class AlltransactionController extends GetxController{
   RxBool isloading = false.obs;
   late DateTime dt;
   var formattedDate;
+  var TotTime;
   List<TransModel> myAllData = [];
+  List myAllTransTime = [];
 
   @override
   Future<void> onInit()async{
@@ -50,9 +52,13 @@ class AlltransactionController extends GetxController{
         for(int i = 0; i < myAllData.length; i++){
           dt = DateTime.parse('${myAllData[i].date}');
           formattedDate = DateFormat('dd-MM-yyyy').format(dt);
+          TotTime = DateFormat('hh:mm:ss').format(dt);
+          myAllTransTime.add(TotTime);
           myAllData[i].date = formattedDate;
+
         }
         myAllData.sort((a, b) => b.date.compareTo(a.date));
+        myAllTransTime.sort((a, b) => b.compareTo(a));
         isloading.value = false;
       }
     } catch (error) {

@@ -177,6 +177,30 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                                               ),
                                             ),
 
+                                            // Time
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10, bottom: 5),
+                                              child: RichText(
+                                                text: TextSpan(
+                                                  children: [
+                                                    TextSpan(
+                                                      //${alltransactionController.transactionsModel?.success![index].amount}
+                                                      text:
+                                                      'Time : ${alltransactionController.myAllTransTime[index]}',
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                          FontWeight.normal,
+                                                          fontSize: response
+                                                              .setTextScale(14),
+                                                          color: const Color(
+                                                              0xff2e2e2e)),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+
                                             // Amount
                                             Padding(
                                               padding: const EdgeInsets.only(
