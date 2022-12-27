@@ -16,11 +16,11 @@ class AlltransactionController extends GetxController{
   List<TransModel> myAllData = [];
   List myAllTransTime = [];
 
-  @override
-  Future<void> onInit()async{
-    super.onInit();
-    getUsersTranactionData();
-  }
+  // @override
+  // Future<void> onInit()async{
+  //   super.onInit();
+  //   getUsersTranactionData();
+  // }
 
   getUsersTranactionData() async {
     final url = Uri.parse('${AppConstants.urlBase}transactions');
